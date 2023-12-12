@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问卷调查页面</title>
+		<link rel="stylesheet" type="text/css" href="questionnaire.css"/>
+		<script src="questionnaire.js" type="text/javascript" charset="utf-8"></script> 
+	</head>
+	<body>
+		<div id="questionnaire">
+			<!--页面标题-->
+			<h1>大学生运动情况问卷调查</h1>
+			<!--水平线-->
+			<hr />
+			<!--表单-->
+			<form method="post"  onsubmit="checkAndInputBox()">
+				<ol>
+					<li>您的性别？</li>
+					<label>
+						<input type="radio" name="q1"  value="q1_1" required="required" />男
+					</label>
+					<label>
+						<input type="radio" name="q2"  value="q2_2" required="required" />女
+					</label>
+					<li>您的受教育程度？</li>
+					<label>
+						<input type="radio" name="q2"  value="q2_1" required="required" />专科
+					</label>
+					<label>
+						<input type="radio" name="q2"  value="q2_2" required="required" />本科
+					</label>
+					<label>
+						<input type="radio" name="q2"  value="q2_3" required="required" />硕士
+					</label>
+					<label>
+						<input type="radio" name="q2"  value="q2_4" required="required" />博士
+					</label>
+					<li>您每周参与体育锻炼的频率？</li>
+					<label>
+						<input type="radio" name="q3"  value="q3_1" required="required" />没有
+					</label>
+					<label>
+						<input type="radio" name="q3"  value="q3_2" required="required" />1~2次
+					</label>
+					<label>
+						<input type="radio" name="q3"  value="q3_3" required="required" />3~6次
+					</label>
+					<label>
+						<input type="radio" name="q3"  value="q3_4" required="required" />每天
+					</label>
+					<li>您通常选择哪种类型的运动？（可多选）</li>
+					<label>
+						<input type="checkbox" name="q4"  value="q4_1"  />无
+					</label><br />
+					<label>
+						<input type="checkbox" name="q4"  value="q4_2"  />跑步
+					</label><br />
+					<label>
+						<input type="checkbox" name="q4"  value="q4_3"  />游泳
+					</label><br />
+                    <label>
+						<input type="checkbox" name="q4"  value="q4_4"  />球类运动
+					</label><br />
+					<label>
+					    <input type="checkbox" name="q4"  value="other" onclick="showInputBox()" />其他
+					</label><br />
+					    <input type="text" id="otherInput" style="display: none;" placeholder="请输入其他运动" />
+					<li>您认为体育运动对您有何影响？</li>
+					<textarea cols="50" rows="10" id="textArea" placeholder="请在这里输入您的看法..."></textarea><br />
+				</ol>
+				<label>您的姓名<input type="text" name="name" required="required"/></label>
+				<label>联系电话<input type="tel" name="tel" required="required"/></label>
+				<div id="btn">
+				<button type="submit">提交问卷</button>
+				</div>
+			</form>
+			
+		</div>
+	</body>
+</html>
