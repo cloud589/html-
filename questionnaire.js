@@ -12,8 +12,7 @@ function checkBox(name) {
 	return j > 0;  
 }  
 
-function check() {
-	var q4 = checkBox("q4");
+function check(q4 ) {
 	if(q4 == false) {
 		alert("第4题起码要选择一个选项");
 		return false;
@@ -21,8 +20,7 @@ function check() {
 	return true;
 }
 
-function check_inputBox() {
-    var textArea = document.getElementById('textArea');
+function check_inputBox(textArea) {
     if (textArea.value === '') {
         alert("第5题不能为空！");
         return false;
@@ -30,9 +28,14 @@ function check_inputBox() {
     return true;
 }
 
-function checkAndInputBox() {  
-    check();  
-    check_inputBox();  
+function checkAndInputBox() {    
+    var q4 = checkBox("q4");
+    var textArea = document.getElementById('textArea');
+    check(q4);  
+    check_inputBox(textArea);
+    if(q4 == true || textArea.value !== ''){
+        alert("提交成功!");
+    }
 }  
 
 function showInputBox() {  
